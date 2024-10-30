@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { Github, Instagram, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
@@ -15,14 +15,16 @@ export default function Portfolio() {
     { id: 6, title: 'NLP', subtitle: 'Language Processing', image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJhbCUyMGxhbmd1YWdlJTIwcHJvY2Vzc2luZ3xlbnwwfHwwfHx8MA%3D%3D' },
   ]
 
-  const floatingAnimation = {
-    animate: {
-      y: [0, -10, 0],
+  const floatingAnimation: Variants = {
+    initial: { 
+      y: 0 
+    },
+    animate: { 
+      y: [-10, 0, -10],
       transition: {
         duration: 2,
-        ease: "easeInOut",
         repeat: Infinity,
-        repeatType: "reverse" as const
+        ease: "easeInOut"
       }
     }
   }
@@ -67,21 +69,24 @@ export default function Portfolio() {
               whileHover={{ scale: 1.2 }}
               className="text-blue-600 hover:text-blue-800"
             >
-              <Instagram />
+              <Instagram className="h-6 w-6" />
+              <span className="sr-only">Instagram</span>
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.2 }}
               className="text-blue-600 hover:text-blue-800"
             >
-              <Linkedin />
+              <Linkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
             </motion.a>
             <motion.a
               href="#"
               whileHover={{ scale: 1.2 }}
               className="text-blue-600 hover:text-blue-800"
             >
-              <Github />
+              <Github className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
             </motion.a>
           </div>
 
@@ -103,14 +108,62 @@ export default function Portfolio() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="bg-white rounded-lg shadow-md p-6 mb-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">Skills</h2>
-            <ul className="list-disc list-inside text-gray-700">
-              <li>French and English spoken fluently</li>
-              <li>Level B2 in Spanish</li>
-              <li>Great writing ability</li>
-              <li>At ease to speak in public</li>
-              <li>Proficient in Word and other desktop software</li>
-            </ul>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Skills</h2>
+            <div className="flex flex-col sm:flex-row gap-6">
+              {/* Development Skills */}
+              <div className="bg-blue-50 rounded-lg p-4 flex-1">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Development Skills</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">HTML, CSS, JavaScript</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">React, Next.js</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Tailwind CSS</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Node.js</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Git, GitHub</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Professional Skills */}
+              <div className="bg-blue-50 rounded-lg p-4 flex-1">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Professional Skills</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Project Management</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Communication</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Problem Solving</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Team Collaboration</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                    <span className="text-gray-700">Adaptability</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
@@ -119,41 +172,72 @@ export default function Portfolio() {
             transition={{ delay: 0.8, duration: 0.5 }}
             className="bg-white rounded-lg shadow-md p-6 mb-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">Experience</h2>
-            <ul className="list-disc list-inside text-gray-700">
-              <li>Communications and Press relations manager at Sia Partners (Current)</li>
-              <li>Versatile crew at McDonald's Annecy (2019-2021, 2022)</li>
-              <li>Packer at Mobalpa (Summer 2021)</li>
-              <li>Various temporary positions (Summer 2022)</li>
-              <li>One-week internship at Net Design (2016)</li>
-            </ul>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Experience</h2>
+            <div className="grid gap-4">
+              {/* Sia Partners */}
+              <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Communications and Press Relations Manager</h3>
+                <p className="text-gray-600 mb-3">Managing communications strategy and press relations at Sia Partners</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Communication</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PR</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Strategy</span>
+                </div>
+              </div>
+
+              {/* McDonald's */}
+              <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Versatile Crew Member</h3>
+                <p className="text-gray-600 mb-3">Managed multiple roles and responsibilities at McDonald's Annecy</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Teamwork</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Customer Service</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Adaptability</span>
+                </div>
+              </div>
+
+              {/* Mobalpa */}
+              <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Packer at Mobalpa</h3>
+                <p className="text-gray-600 mb-3">Ensured quality control and efficient packaging operations</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Logistics</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Quality Control</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Efficiency</span>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center font-serif">Projects</h2>
-        <div className="grid grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {projects.map((project) => (
             <motion.div
               key={project.id}
-              {...floatingAnimation}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden h-full"
+              variants={floatingAnimation}
+              initial="initial"
+              animate="animate"
+              className="bg-white rounded-lg shadow-md overflow-hidden"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={500}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">{project.subtitle}</p>
+              <div className="aspect-video relative">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={500}
+                  height={300}
+                  
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.subtitle}</p>
                 <Link href={`/project/${project.id}`} passHref>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+                    className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full"
                   >
                     View More
                   </motion.button>
