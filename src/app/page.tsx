@@ -16,12 +16,14 @@ export default function Portfolio() {
   ]
 
   const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 2,
-      ease: "easeInOut",
-      repeat: Infinity,
-      repeatType: "reverse"
+    animate: {
+      y: [0, -10, 0],
+      transition: {
+        duration: 2,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "reverse" as const
+      }
     }
   }
 
@@ -55,7 +57,7 @@ export default function Portfolio() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-3xl font-bold text-gray-900 mb-4"
+            className="text-4xl font-bold text-gray-900 mb-4 font-serif"
           >
             Maxime Boly
           </motion.h1>
@@ -89,7 +91,7 @@ export default function Portfolio() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="bg-white rounded-lg shadow-md p-6 mb-8"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">About Me</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">About Me</h2>
             <p className="text-gray-700">
               After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
             </p>
@@ -101,48 +103,41 @@ export default function Portfolio() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="bg-white rounded-lg shadow-md p-6 mb-8"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Skills & Experience</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Skills</h3>
-                <ul className="list-disc list-inside text-gray-700">
-                  <li>French and English spoken fluently</li>
-                  <li>Level B2 in Spanish</li>
-                  <li>Great writing ability</li>
-                  <li>At ease to speak in public</li>
-                  <li>Proficient in Word and other desktop software</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Experience</h3>
-                <ul className="list-disc list-inside text-gray-700">
-                  <li>Communications and Press relations manager at Sia Partners (Current)</li>
-                  <li>Versatile crew at McDonald's Annecy (2019-2021, 2022)</li>
-                  <li>Packer at Mobalpa (Summer 2021)</li>
-                  <li>Various temporary positions (Summer 2022)</li>
-                  <li>One-week internship at Net Design (2016)</li>
-                </ul>
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">Skills</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>French and English spoken fluently</li>
+              <li>Level B2 in Spanish</li>
+              <li>Great writing ability</li>
+              <li>At ease to speak in public</li>
+              <li>Proficient in Word and other desktop software</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="bg-white rounded-lg shadow-md p-6 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">Experience</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Communications and Press relations manager at Sia Partners (Current)</li>
+              <li>Versatile crew at McDonald's Annecy (2019-2021, 2022)</li>
+              <li>Packer at Mobalpa (Summer 2021)</li>
+              <li>Various temporary positions (Summer 2022)</li>
+              <li>One-week internship at Net Design (2016)</li>
+            </ul>
           </motion.div>
         </motion.div>
 
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Projects</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center font-serif">Projects</h2>
         <div className="grid grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              animate={{
-                y: [0, -10, 0],
-                transition: {
-                  duration: 2,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }
-              }}
+              {...floatingAnimation}
               whileHover={{ scale: 1.05 }}
-              className={`bg-white rounded-lg shadow-md overflow-hidden ${index % 2 === 1 ? 'mt-12' : ''}`}
+              className="bg-white rounded-lg shadow-md overflow-hidden h-full"
             >
               <Image
                 src={project.image}
