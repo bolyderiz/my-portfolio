@@ -63,7 +63,7 @@ export default function Portfolio() {
           >
             Maxime Boly
           </motion.h1>
-          <div className="flex justify-center space-x-4 mb-8">
+          <div className="flex justify-center space-x-4 mb-4">
             <motion.a
               href="#"
               whileHover={{ scale: 1.2 }}
@@ -89,6 +89,25 @@ export default function Portfolio() {
               <span className="sr-only">GitHub</span>
             </motion.a>
           </div>
+
+          {/* Add Calendly Button */}
+          <motion.div 
+            className="mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <motion.a
+              href="https://calendly.com/bolymaxime"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors shadow-md"
+            >
+              Schedule a Meeting
+            </motion.a>
+          </motion.div>
 
           {/* About Me section with new title format */}
           <div className="relative mb-8">
