@@ -1,101 +1,173 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { Github, Instagram, Linkedin } from 'lucide-react'
+import Link from 'next/link'
+
+export default function Portfolio() {
+  const projects = [
+    { id: 1, title: 'AI Research', subtitle: 'Deep Learning Algorithms', image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWklMjByZXNlYXJjaHxlbnwwfHwwfHx8MA%3D%3D' },
+    { id: 2, title: 'Data Analysis', subtitle: 'Big Data Insights', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGF0YSUyMGFuYWx5c2lzfGVufDB8fDB8fHww' },
+    { id: 3, title: 'Machine Learning', subtitle: 'Predictive Models', image: 'https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjaGluZSUyMGxlYXJuaW5nfGVufDB8fDB8fHww' },
+    { id: 4, title: 'Deep Learning', subtitle: 'Neural Networks', image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVlcCUyMGxlYXJuaW5nfGVufDB8fDB8fHww' },
+    { id: 5, title: 'Computer Vision', subtitle: 'Image Recognition', image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjB2aXNpb258ZW58MHx8MHx8fDA%3D' },
+    { id: 6, title: 'NLP', subtitle: 'Language Processing', image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJhbCUyMGxhbmd1YWdlJTIwcHJvY2Vzc2luZ3xlbnwwfHwwfHx8MA%3D%3D' },
+  ]
+
+  const floatingAnimation = {
+    y: [0, -10, 0],
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "reverse"
+    }
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen bg-blue-200 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+          className="text-center mb-12"
+        >
+          <motion.div 
+            className="w-48 h-48 mx-auto mb-4 overflow-hidden rounded-full border-4 border-white shadow-lg"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_7505(1)-a0ENOGuWqZuEMde5V1IvOPcf7JdbQ1.JPEG"
+              alt="Maxime Boly"
+              width={192}
+              height={192}
+              className="object-cover w-full h-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </motion.div>
+          <motion.h1
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-3xl font-bold text-gray-900 mb-4"
           >
-            Read our docs
-          </a>
+            Maxime Boly
+          </motion.h1>
+          <div className="flex justify-center space-x-4 mb-8">
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.2 }}
+              className="text-blue-600 hover:text-blue-800"
+            >
+              <Instagram />
+            </motion.a>
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.2 }}
+              className="text-blue-600 hover:text-blue-800"
+            >
+              <Linkedin />
+            </motion.a>
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.2 }}
+              className="text-blue-600 hover:text-blue-800"
+            >
+              <Github />
+            </motion.a>
+          </div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="bg-white rounded-lg shadow-md p-6 mb-8"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">About Me</h2>
+            <p className="text-gray-700">
+              After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="bg-white rounded-lg shadow-md p-6 mb-8"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Skills & Experience</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Skills</h3>
+                <ul className="list-disc list-inside text-gray-700">
+                  <li>French and English spoken fluently</li>
+                  <li>Level B2 in Spanish</li>
+                  <li>Great writing ability</li>
+                  <li>At ease to speak in public</li>
+                  <li>Proficient in Word and other desktop software</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Experience</h3>
+                <ul className="list-disc list-inside text-gray-700">
+                  <li>Communications and Press relations manager at Sia Partners (Current)</li>
+                  <li>Versatile crew at McDonald's Annecy (2019-2021, 2022)</li>
+                  <li>Packer at Mobalpa (Summer 2021)</li>
+                  <li>Various temporary positions (Summer 2022)</li>
+                  <li>One-week internship at Net Design (2016)</li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Projects</h2>
+        <div className="grid grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              animate={{
+                y: [0, -10, 0],
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }
+              }}
+              whileHover={{ scale: 1.05 }}
+              className={`bg-white rounded-lg shadow-md overflow-hidden ${index % 2 === 1 ? 'mt-12' : ''}`}
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-medium text-gray-900">{project.title}</h3>
+                <p className="text-sm text-gray-600 mb-4">{project.subtitle}</p>
+                <Link href={`/project/${project.id}`} passHref>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+                  >
+                    View More
+                  </motion.button>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
-  );
+  )
 }
