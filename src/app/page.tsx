@@ -90,162 +90,192 @@ export default function Portfolio() {
             </motion.a>
           </div>
 
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="bg-white rounded-lg shadow-md p-6 mb-8"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">About Me</h2>
+          {/* About Me section with new title format */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-blue-200 px-6 py-2">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  About Me
+                </h2>
+              </span>
+            </div>
+          </div>
+          <div className="mb-8">
             <p className="text-gray-700">
               After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="bg-white rounded-lg shadow-md p-6 mb-8"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Skills</h2>
-            <div className="flex flex-col sm:flex-row gap-6">
-              {/* Development Skills */}
-              <div className="bg-blue-50 rounded-lg p-4 flex-1">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Development Skills</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">HTML, CSS, JavaScript</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">React, Next.js</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Tailwind CSS</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Node.js</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Git, GitHub</span>
-                  </div>
+          {/* Skills section with new title format */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-blue-200 px-6 py-2">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Skills
+                </h2>
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6 mb-8">
+            {/* Development Skills - keep the blue background */}
+            <div className="bg-blue-50 rounded-lg p-4 flex-1">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Development Skills</h3>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">HTML, CSS, JavaScript</span>
                 </div>
-              </div>
-
-              {/* Professional Skills */}
-              <div className="bg-blue-50 rounded-lg p-4 flex-1">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Professional Skills</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Project Management</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Communication</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Problem Solving</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Team Collaboration</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                    <span className="text-gray-700">Adaptability</span>
-                  </div>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">React, Next.js</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Tailwind CSS</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Node.js</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Git, GitHub</span>
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="bg-white rounded-lg shadow-md p-6 mb-8"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Experience</h2>
-            <div className="grid gap-4">
-              {/* Sia Partners */}
-              <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Communications and Press Relations Manager</h3>
-                <p className="text-gray-600 mb-3">Managing communications strategy and press relations at Sia Partners</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Communication</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PR</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Strategy</span>
+            {/* Professional Skills - keep the blue background */}
+            <div className="bg-blue-50 rounded-lg p-4 flex-1">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Professional Skills</h3>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Project Management</span>
                 </div>
-              </div>
-
-              {/* McDonald's */}
-              <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Versatile Crew Member</h3>
-                <p className="text-gray-600 mb-3">Managed multiple roles and responsibilities at McDonald's Annecy</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Teamwork</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Customer Service</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Adaptability</span>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Communication</span>
                 </div>
-              </div>
-
-              {/* Mobalpa */}
-              <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">Packer at Mobalpa</h3>
-                <p className="text-gray-600 mb-3">Ensured quality control and efficient packaging operations</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Logistics</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Quality Control</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Efficiency</span>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Problem Solving</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Team Collaboration</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
+                  <span className="text-gray-700">Adaptability</span>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
+
+          {/* Experience section with new title format */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-blue-200 px-6 py-2">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Experience
+                </h2>
+              </span>
+            </div>
+          </div>
+          <div className="grid gap-4 mb-8">
+            {/* Sia Partners */}
+            <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Communications and Press Relations Manager</h3>
+              <p className="text-gray-600 mb-3">Managing communications strategy and press relations at Sia Partners</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Communication</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PR</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Strategy</span>
+              </div>
+            </div>
+
+            {/* McDonald's */}
+            <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Versatile Crew Member</h3>
+              <p className="text-gray-600 mb-3">Managed multiple roles and responsibilities at McDonald's Annecy</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Teamwork</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Customer Service</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Adaptability</span>
+              </div>
+            </div>
+
+            {/* Mobalpa */}
+            <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Packer at Mobalpa</h3>
+              <p className="text-gray-600 mb-3">Ensured quality control and efficient packaging operations</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Logistics</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Quality Control</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Efficiency</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Updated Projects title with frame */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-blue-200 px-6 py-2">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Projects
+                </h2>
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={floatingAnimation}
+                initial="initial"
+                animate="animate"
+                className="bg-white rounded-lg shadow-md overflow-hidden"
+              >
+                <div className="aspect-video relative">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={500}
+                    height={300}
+                    
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.subtitle}</p>
+                  <Link href={`/project/${project.id}`} passHref>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full"
+                    >
+                      View More
+                    </motion.button>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
-
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center font-serif">Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={floatingAnimation}
-              initial="initial"
-              animate="animate"
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
-              <div className="aspect-video relative">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={500}
-                  height={300}
-                  
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.subtitle}</p>
-                <Link href={`/project/${project.id}`} passHref>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full"
-                  >
-                    View More
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </div>
   )
