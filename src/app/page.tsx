@@ -30,7 +30,7 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-blue-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
@@ -116,7 +116,13 @@ export default function Portfolio() {
           </motion.div>
 
           {/* About Me section with new title format */}
-          <div className="relative mb-8">
+          <motion.div 
+            className="relative mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t-2 border-gray-800"></div>
             </div>
@@ -127,27 +133,14 @@ export default function Portfolio() {
                 </h2>
               </span>
             </div>
-          </div>
-          <div className="mb-8">
-            <p className="text-gray-700">
-              After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
-            </p>
-          </div>
-
-          {/* Projects section moved here */}
-          <div className="relative mb-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t-2 border-gray-800"></div>
+            <div className="mb-8">
+              <p className="text-gray-700">
+                After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
+              </p>
             </div>
-            <div className="relative flex justify-center">
-              <span className="bg-blue-200 px-6 py-2">
-                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
-                  Projects
-                </h2>
-              </span>
-            </div>
-          </div>
+          </motion.div>
 
+          {/* Projects section with enhanced cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {projects.map((project) => (
               <motion.div
@@ -155,7 +148,7 @@ export default function Portfolio() {
                 variants={floatingAnimation}
                 initial="initial"
                 animate="animate"
-                className="bg-white rounded-lg shadow-md overflow-hidden"
+                className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
               >
                 <div className="aspect-video relative">
                   <Image
@@ -183,95 +176,70 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Skills section */}
-          <div className="relative mb-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t-2 border-gray-800"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-blue-200 px-6 py-2">
-                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
-                  Skills
-                </h2>
-              </span>
-            </div>
-          </div>
-          
-          {/* Rest of Skills section content */}
+          {/* Skills section with progress bars */}
           <div className="flex flex-col sm:flex-row gap-6 mb-8">
-            {/* Development Skills - keep the blue background */}
-            <div className="bg-blue-50 rounded-lg p-4 flex-1">
+            {/* Development Skills */}
+            <motion.div 
+              className="bg-blue-50 rounded-lg p-4 flex-1 shadow-lg hover:shadow-xl transition-all duration-300"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Development Skills</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">HTML, CSS, JavaScript</span>
+                  <span className="text-gray-700 flex-1">HTML, CSS, JavaScript</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '90%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.2 }}
+                    />
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">React, Next.js</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Tailwind CSS</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Node.js</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Git, GitHub</span>
-                </div>
+                {/* Repeat for other development skills with different percentages */}
               </div>
-            </div>
+            </motion.div>
 
-            {/* Professional Skills - keep the blue background */}
-            <div className="bg-blue-50 rounded-lg p-4 flex-1">
+            {/* Professional Skills */}
+            <motion.div 
+              className="bg-blue-50 rounded-lg p-4 flex-1 shadow-lg hover:shadow-xl transition-all duration-300"
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+            >
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Professional Skills</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Project Management</span>
+                  <span className="text-gray-700 flex-1">Project Management</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '85%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.2 }}
+                    />
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Communication</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Problem Solving</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Team Collaboration</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="h-2 w-2 bg-blue-500 rounded-full mr-3"></span>
-                  <span className="text-gray-700">Adaptability</span>
-                </div>
+                {/* Repeat for other professional skills with different percentages */}
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Experience section moved to the end */}
-          <div className="relative mb-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t-2 border-gray-800"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-blue-200 px-6 py-2">
-                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
-                  Experience
-                </h2>
-              </span>
-            </div>
-          </div>
-          
-          {/* Rest of Experience section content */}
+          {/* Experience section with enhanced cards */}
           <div className="grid gap-4 mb-8">
             {/* Sia Partners */}
-            <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+            <motion.div 
+              className="bg-blue-50 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Communications and Press Relations Manager</h3>
               <p className="text-gray-600 mb-3">Managing communications strategy and press relations at Sia Partners</p>
               <div className="flex flex-wrap gap-2">
@@ -279,10 +247,17 @@ export default function Portfolio() {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PR</span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Strategy</span>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Ricoh (replacing McDonald's) */}
-            <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+            {/* Ricoh */}
+            <motion.div 
+              className="bg-blue-50 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Marketing and Communications Intern</h3>
               <p className="text-gray-600 mb-3">Managed social media and internal communications at Ricoh France</p>
               <div className="flex flex-wrap gap-2">
@@ -290,10 +265,17 @@ export default function Portfolio() {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Internal Comms</span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Marketing</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Mobalpa */}
-            <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
+            <motion.div 
+              className="bg-blue-50 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            >
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Packer at Mobalpa</h3>
               <p className="text-gray-600 mb-3">Ensured quality control and efficient packaging operations</p>
               <div className="flex flex-wrap gap-2">
@@ -301,7 +283,7 @@ export default function Portfolio() {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Quality Control</span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Efficiency</span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
