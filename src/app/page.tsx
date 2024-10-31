@@ -65,7 +65,9 @@ export default function Portfolio() {
           </motion.h1>
           <div className="flex justify-center space-x-4 mb-4">
             <motion.a
-              href="#"
+              href="https://www.instagram.com/bolyderiz/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
               className="text-blue-600 hover:text-blue-800"
             >
@@ -73,7 +75,9 @@ export default function Portfolio() {
               <span className="sr-only">Instagram</span>
             </motion.a>
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/maximeboly"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
               className="text-blue-600 hover:text-blue-800"
             >
@@ -81,7 +85,9 @@ export default function Portfolio() {
               <span className="sr-only">LinkedIn</span>
             </motion.a>
             <motion.a
-              href="#"
+              href="https://github.com/bolyderiz"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
               className="text-blue-600 hover:text-blue-800"
             >
