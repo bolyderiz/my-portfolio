@@ -128,7 +128,56 @@ export default function Portfolio() {
             </p>
           </div>
 
-          {/* Skills section with new title format */}
+          {/* Projects section moved here */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-blue-200 px-6 py-2">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Projects
+                </h2>
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            {projects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={floatingAnimation}
+                initial="initial"
+                animate="animate"
+                className="bg-white rounded-lg shadow-md overflow-hidden"
+              >
+                <div className="aspect-video relative">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={500}
+                    height={300}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.subtitle}</p>
+                  <Link href={`/project/${project.id}`} passHref>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full"
+                    >
+                      View Project
+                    </motion.button>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Skills section */}
           <div className="relative mb-8">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t-2 border-gray-800"></div>
@@ -141,6 +190,8 @@ export default function Portfolio() {
               </span>
             </div>
           </div>
+          
+          {/* Rest of Skills section content */}
           <div className="flex flex-col sm:flex-row gap-6 mb-8">
             {/* Development Skills - keep the blue background */}
             <div className="bg-blue-50 rounded-lg p-4 flex-1">
@@ -197,7 +248,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Experience section with new title format */}
+          {/* Experience section moved to the end */}
           <div className="relative mb-8">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t-2 border-gray-800"></div>
@@ -210,6 +261,8 @@ export default function Portfolio() {
               </span>
             </div>
           </div>
+          
+          {/* Rest of Experience section content */}
           <div className="grid gap-4 mb-8">
             {/* Sia Partners */}
             <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
@@ -243,56 +296,6 @@ export default function Portfolio() {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Efficiency</span>
               </div>
             </div>
-          </div>
-
-          {/* Updated Projects title with frame */}
-          <div className="relative mb-8">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t-2 border-gray-800"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="bg-blue-200 px-6 py-2">
-                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
-                  Projects
-                </h2>
-              </span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={floatingAnimation}
-                initial="initial"
-                animate="animate"
-                className="bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div className="aspect-video relative">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={500}
-                    height={300}
-                    
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.subtitle}</p>
-                  <Link href={`/project/${project.id}`} passHref>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full"
-                    >
-                      View More
-                    </motion.button>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </motion.div>
       </div>
