@@ -115,32 +115,40 @@ export default function Portfolio() {
             </motion.a>
           </motion.div>
 
-          {/* About Me section with new title format */}
-          <motion.div 
-            className="relative mb-8"
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          {/* About Me section */}
+          <div className="relative mb-8">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t-2 border-gray-800"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-blue-200 px-6 py-2">
+              <span className="bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 px-6 py-2 border-2 border-gray-800 rounded-md">
                 <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
                   About Me
                 </h2>
               </span>
             </div>
-            <div className="mb-8">
-              <p className="text-gray-700">
-                After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
-              </p>
-            </div>
-          </motion.div>
+          </div>
+          <div className="mb-8">
+            <p className="text-gray-700">
+              After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
+            </p>
+          </div>
 
-          {/* Projects section with enhanced cards */}
+          {/* Projects section */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 px-6 py-2 border-2 border-gray-800 rounded-md">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Projects
+                </h2>
+              </span>
+            </div>
+          </div>
+
+          {/* Projects grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
             {projects.map((project) => (
               <motion.div
@@ -176,7 +184,21 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* Skills section with progress bars */}
+          {/* Skills section */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 px-6 py-2 border-2 border-gray-800 rounded-md">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Skills
+                </h2>
+              </span>
+            </div>
+          </div>
+
+          {/* Skills section with all skills */}
           <div className="flex flex-col sm:flex-row gap-6 mb-8">
             {/* Development Skills */}
             <motion.div 
@@ -199,7 +221,54 @@ export default function Portfolio() {
                     />
                   </div>
                 </div>
-                {/* Repeat for other development skills with different percentages */}
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">React, Next.js</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '85%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.3 }}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Tailwind CSS</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '80%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.4 }}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Node.js</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '75%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Git, GitHub</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '85%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.6 }}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -224,12 +293,73 @@ export default function Portfolio() {
                     />
                   </div>
                 </div>
-                {/* Repeat for other professional skills with different percentages */}
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Communication</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '90%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.3 }}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Problem Solving</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '80%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.4 }}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Team Collaboration</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '85%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-gray-700 flex-1">Adaptability</span>
+                  <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
+                    <motion.div 
+                      className="h-full bg-blue-500"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '90%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: 0.6 }}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Experience section with enhanced cards */}
+          {/* Experience section */}
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t-2 border-gray-800"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <span className="bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 px-6 py-2 border-2 border-gray-800 rounded-md">
+                <h2 className="text-3xl font-bold text-gray-900 font-serif inline-block">
+                  Experience
+                </h2>
+              </span>
+            </div>
+          </div>
+
+          {/* Experience cards */}
           <div className="grid gap-4 mb-8">
             {/* Sia Partners */}
             <motion.div 
