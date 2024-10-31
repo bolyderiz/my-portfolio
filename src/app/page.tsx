@@ -69,7 +69,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-blue-600 hover:text-blue-800"
+              className="text-blue-800 hover:text-blue-900"
             >
               <Instagram className="h-6 w-6" />
               <span className="sr-only">Instagram</span>
@@ -79,7 +79,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-blue-600 hover:text-blue-800"
+              className="text-blue-800 hover:text-blue-900"
             >
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
@@ -89,7 +89,7 @@ export default function Portfolio() {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-blue-600 hover:text-blue-800"
+              className="text-blue-800 hover:text-blue-900"
             >
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
@@ -109,7 +109,7 @@ export default function Portfolio() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors shadow-md"
+              className="inline-block bg-blue-700 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-800 transition-colors shadow-md"
             >
               Schedule a Meeting
             </motion.a>
@@ -129,7 +129,7 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="mb-8">
-            <p className="text-gray-700">
+            <p className="text-gray-800">
               After graduating with a degree in Applied Foreign Languages, I decided to turn to AI and Data, fields I'm now passionate about. I enjoy marketing, which I don't hesitate to mix with these two other skills. I am now pursuing a MSc IA/Data at Eugenia School and work as a Communications and Press relations manager at Sia Partners.
             </p>
           </div>
@@ -169,12 +169,12 @@ export default function Portfolio() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.subtitle}</p>
+                  <p className="text-gray-800 mb-4">{project.subtitle}</p>
                   <Link href={`/project/${project.id}`} passHref>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors w-full"
+                      className="bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-colors w-full"
                     >
                       View Project
                     </motion.button>
@@ -213,7 +213,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">HTML, CSS, JavaScript</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '90%' }}
                       viewport={{ once: true }}
@@ -225,7 +225,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">React, Next.js</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '85%' }}
                       viewport={{ once: true }}
@@ -237,7 +237,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Tailwind CSS</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '80%' }}
                       viewport={{ once: true }}
@@ -249,7 +249,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Node.js</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '75%' }}
                       viewport={{ once: true }}
@@ -261,7 +261,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Git, GitHub</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '85%' }}
                       viewport={{ once: true }}
@@ -285,7 +285,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Project Management</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '85%' }}
                       viewport={{ once: true }}
@@ -297,7 +297,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Communication</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '90%' }}
                       viewport={{ once: true }}
@@ -309,7 +309,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Problem Solving</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '80%' }}
                       viewport={{ once: true }}
@@ -321,7 +321,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Team Collaboration</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '85%' }}
                       viewport={{ once: true }}
@@ -333,7 +333,7 @@ export default function Portfolio() {
                   <span className="text-gray-700 flex-1">Adaptability</span>
                   <div className="w-32 h-2 bg-blue-100 rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-blue-500"
+                      className="h-full bg-blue-700"
                       initial={{ width: 0 }}
                       whileInView={{ width: '90%' }}
                       viewport={{ once: true }}
@@ -371,11 +371,11 @@ export default function Portfolio() {
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Communications and Press Relations Manager</h3>
-              <p className="text-gray-600 mb-3">Managing communications strategy and press relations at Sia Partners</p>
+              <p className="text-gray-800 mb-3">Managing communications strategy and press relations at Sia Partners</p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Communication</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PR</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Strategy</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Communication</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">PR</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Strategy</span>
               </div>
             </motion.div>
 
@@ -391,9 +391,9 @@ export default function Portfolio() {
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Marketing and Communications Intern</h3>
               <p className="text-gray-600 mb-3">Managed social media and internal communications at Ricoh France</p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Social Media</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Internal Comms</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Marketing</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Social Media</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Internal Comms</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Marketing</span>
               </div>
             </motion.div>
 
@@ -409,9 +409,9 @@ export default function Portfolio() {
               <h3 className="text-xl font-semibold text-gray-800 mb-2">Packer at Mobalpa</h3>
               <p className="text-gray-600 mb-3">Ensured quality control and efficient packaging operations</p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Logistics</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Quality Control</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Efficiency</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Logistics</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Quality Control</span>
+                <span className="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm font-medium">Efficiency</span>
               </div>
             </motion.div>
           </div>
