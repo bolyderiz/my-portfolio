@@ -222,14 +222,14 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* McDonald's */}
+            {/* Ricoh (replacing McDonald's) */}
             <div className="bg-blue-50 rounded-lg p-4 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Versatile Crew Member</h3>
-              <p className="text-gray-600 mb-3">Managed multiple roles and responsibilities at McDonald's Annecy</p>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">Marketing and Communications Intern</h3>
+              <p className="text-gray-600 mb-3">Managed social media and internal communications at Ricoh France</p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Teamwork</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Customer Service</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Adaptability</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Social Media</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Internal Comms</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Marketing</span>
               </div>
             </div>
 
